@@ -11,9 +11,9 @@ func main() {
 	// new app
 	a := app.New()
 	// new title and window
-	w := a.NewWindow("New Form")
+	w := a.NewWindow("Menu")
 	// resize window
-	w.Resize(fyne.NewSize(400, 400))
+	w.Resize(fyne.NewSize(800, 600))
 	// label empty
 	label := widget.NewLabel("")
 	// form widget
@@ -31,15 +31,11 @@ func main() {
 		label.Refresh()
 	}
 	form.OnSubmit = func() {
-		label.Text = "submitted"
+		label.Text = "Ordinato"
 		label.Refresh()
 	}
+
 	// we are almost done
-	w.SetContent(
-		container.NewVBox(
-			form,
-			label,
-		),
-	)
+	w.SetContent(container.NewVScroll(container.NewVBox(form, label)))
 	w.ShowAndRun()
 }
