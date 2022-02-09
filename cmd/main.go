@@ -2,16 +2,11 @@ package main
 
 import (
 	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
 )
 
 func main() {
-	// new app
-	a := app.New()
-	// new title and window
-	w := a.NewWindow("Menu")
 	// resize window
 	w.Resize(fyne.NewSize(800, 600))
 	// label empty
